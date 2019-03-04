@@ -1,11 +1,13 @@
 #include "tutorial.h"
 #include "sort.h"
 #include "linkedlist.h"
+#include "graph.h"
 
 // namespace
 using namespace T;
 using namespace S;
 using namespace L;
+using namespace G;
 using namespace std;
 
 
@@ -110,6 +112,7 @@ int main() {
 
     // Sorts functions
     Sort mySort;
+    // merge sort
     int arr[9] = {2,3,6,4,1,0,9,10,-1};
     printf("Initial array: \n");
     mySort.printArray(arr, sizeof(arr)/sizeof(arr[0]));
@@ -117,12 +120,34 @@ int main() {
     printf("After merge sort from 0 to n-1: \n");
     mySort.printArray(arr, sizeof(arr)/sizeof(arr[0]));
 
+    // quick sort
     int arr1[9] = {2,3,6,4,1,0,9,10,-1};
-    printf("Initial array: \n");
-    mySort.printArray(arr1, sizeof(arr1)/sizeof(arr1[0]));
     mySort.quickSort(arr1, 0, sizeof(arr1)/sizeof(arr1[0])-1);
     printf("After quick sort from 0 to n-1: \n");
     mySort.printArray(arr1, sizeof(arr1)/sizeof(arr1[0]));
+
+    // bubble sort
+    int arr2[9] = {2,3,6,4,1,0,9,10,-1};
+    mySort.bubbleSort(arr2, sizeof(arr2)/sizeof(arr2[0]));
+    printf("After bubble sort from 0 to n-1: \n");
+    mySort.printArray(arr2, sizeof(arr2)/sizeof(arr2[0]));
+
+    // insertion sort
+    int arr3[9] = {2,3,6,4,1,0,9,10,-1};
+    mySort.insertionSort(arr3, sizeof(arr3)/sizeof(arr3[0]));
+    printf("After insertion sort from 0 to n-1: \n");
+    mySort.printArray(arr3, sizeof(arr3)/sizeof(arr3[0]));
+
+    // heap sort
+    int arr4[9] = {2,3,6,4,1,0,9,10,-1};
+    mySort.heapSort(arr4, sizeof(arr4)/sizeof(arr4[0]));
+    printf("After heap sort from 0 to n-1: \n");
+    mySort.printArray(arr4, sizeof(arr4)/sizeof(arr4[0]));
+
+    // interpolation search
+    int idx = mySort.interpolationSearch(arr4, sizeof(arr4)/sizeof(arr4[0]), 6);
+    printf("Found 6 at %d from the upper sorted list.\n", idx);
+
 
 
     // Linked list
@@ -154,6 +179,22 @@ int main() {
     printf("The length of the list: %d\n", l.length());
 
 
+
+    /* Graph */
+    // init the graph
+    Graph g(4);
+    // add edges
+    g.addEdge(0, 1);
+    g.addEdge(0, 2);
+    g.addEdge(1, 2);
+    g.addEdge(2, 0);
+    g.addEdge(2, 3);
+    g.addEdge(3, 3);
+
+    g.showV();
+    // list breadth fist traversal, start from 2
+    g.BFS(2);
+    g.DFS(2);
 
 
 

@@ -2,8 +2,8 @@
 // Created by Lian, Peng on 2019-03-03.
 //
 
-#ifndef UNTITLED_LINKEDLIST_H
-#define UNTITLED_LINKEDLIST_H
+#ifndef CPP_LEARN_LINKEDLIST_H
+#define CPP_LEARN_LINKEDLIST_H
 
 #include <iostream>
 
@@ -35,4 +35,4 @@ namespace L{
 }
 
 
-#endif //UNTITLED_LINKEDLIST_H
+#endif //CPP_LEARN_LINKEDLIST_H

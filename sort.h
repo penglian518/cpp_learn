@@ -22,6 +22,20 @@ namespace S{
         void swap(int *a, int *b);
         void quickSort(int arr[], int low, int high);
         int partition(int arr[], int low, int high);
+
+        // bubble sort
+        void bubbleSort(int arr[], int n);
+
+        // insertion sort
+        void insertionSort(int arr[], int n);
+
+        // heap sort
+        void heapSort(int arr[], int n);
+        void heapify(int arr[], int n, int i);
+
+        // interpolation search (search an ele (x) from an sorted array)
+        int interpolationSearch(int arr[], int n, int x);
+
     };
 
 }
