@@ -18,7 +18,7 @@ namespace G{
 
     public:
         Graph(int V);           // constructor
-        void showV();
+        void showGraph();
         void addEdge(int v, int w);
         void BFS(int s);        // prints Graph traversal from a given source s
         void DFS(int s);        // DFS traversal

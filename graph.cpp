@@ -12,10 +12,10 @@ Graph::Graph(int V) {
     printf("\nWelcome to use the Graph module!\n");
 
     this->V = V;
-    adj = new list<int> [V]; //init the dynamic memory to be an V-sized array of lists
+    adj = new list<int> [V];                //init the dynamic memory to be an V-sized array of lists
 }
 
-void Graph::showV() {
+void Graph::showGraph() {
     printf("The nodes number are: %d\n", this->V);
     printf("Node, adjacent list\n");
     // list nodes and their adjacent list
@@ -26,6 +26,7 @@ void Graph::showV() {
         }
         cout << endl;
     }
+    cout << endl;
 }
 
 void Graph::addEdge(int v, int w) {
@@ -55,8 +56,8 @@ void Graph::BFS(int s) {
         // check the adjacent elements of the current element, if not been visited, put into the queue
         for (i = adj[s].begin(); i != adj[s].end(); i++){
             if (!visited[*i]){
-                visited[*i] = true;
                 queue.push_back(*i);
+                visited[*i] = true;
             }
         }
     }
@@ -83,7 +84,7 @@ void Graph::DFSUtil(int v, bool *visited) {
 void Graph::DFS(int s) {
     // init the visited array
     bool *visited = new bool [V];
-    for (int i=0; i<V; i++) visited[i] = false;
+    for (int i=0; i<V; i++) visited[i] = false;         // mark all as false
 
     printf("The results for Depth First Traversal:\n");
 

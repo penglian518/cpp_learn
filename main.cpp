@@ -2,12 +2,14 @@
 #include "sort.h"
 #include "linkedlist.h"
 #include "graph.h"
+#include "tree.h"
 
 // namespace
 using namespace T;
 using namespace S;
 using namespace L;
 using namespace G;
+using namespace TREE;
 using namespace std;
 
 
@@ -150,7 +152,7 @@ int main() {
 
 
 
-    // Linked list
+    /* Linked list */
     // create object
     linkedlist l;
 
@@ -179,7 +181,6 @@ int main() {
     printf("The length of the list: %d\n", l.length());
 
 
-
     /* Graph */
     // init the graph
     Graph g(4);
@@ -191,12 +192,32 @@ int main() {
     g.addEdge(2, 3);
     g.addEdge(3, 3);
 
-    g.showV();
+    // display the graph
+    g.showGraph();
     // list breadth fist traversal, start from 2
     g.BFS(2);
     g.DFS(2);
 
-
+    /* Tree */
+    Tree t;
+    // build a tree
+    Tree::Node *root = t.addNode(10);
+    root->left = t.addNode(2);
+    root->right = t.addNode(10);
+    root->left->left = t.addNode(20);
+    root->left->right = t.addNode(1);
+    root->right->right = t.addNode(-25);
+    root->right->right->left = t.addNode(3);
+    root->right->right->right = t.addNode(4);
+    // display a tree
+    t.display(root);
+    // find all deepth
+    printf("Deepth for all nodes:\n");
+    t.allDepth(root);
+    // find min deepth
+    printf("The min deepth is %d.\n", t.minDepth(root));
+    // find the max path sum
+    printf("The max path sum is: %d.\n", t.maxPathSum(root));
 
     return 0; // 0 successful, 1 failed
 }
