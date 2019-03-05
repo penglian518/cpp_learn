@@ -206,7 +206,7 @@ int Sort::interpolationSearch(int *arr, int n, int x){
     int lo = 0, hi = n-1;
 
     // search from lo to hi
-    while (lo <= hi && x >= arr[lo] & x<= arr[hi]){
+    while (lo <= hi && x >= arr[lo] && x<= arr[hi]){
 
         // terminate the searching
         if (lo == hi) {

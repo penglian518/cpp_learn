@@ -65,7 +65,7 @@ void Tutorial::showBasic() {
      */
     int num1=20, num2 = 90;
     float num3 = 20.3;      // single precision, 4 bytes
-    double num4 = 20.909; // double precision, 8 bytes
+    //double num4 = 20.909; // double precision, 8 bytes
     cout << "num1 + num3 = " << (num1+num3) << endl;
 
     bool a = true;
@@ -193,8 +193,8 @@ void Tutorial::showBasic() {
     //cout << endl;
     prt.show(v2);
 
-    int head = v2.front();                                  // 1st element
-    int tail = v2.back();                                   // last element
+    //int head = v2.front();                                  // 1st element
+    //int tail = v2.back();                                   // last element
 
     v2.insert(v2.begin(), 0);                               // insert to head
     v2.insert(v2.begin()+3, 7);                             // insert to 4th position
