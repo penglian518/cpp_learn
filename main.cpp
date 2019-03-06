@@ -201,10 +201,10 @@ int main() {
     /* Tree */
     Tree t;
     // build a tree
-    Tree::Node *root = t.addNode(10);
-    root->left = t.addNode(2);
-    root->right = t.addNode(10);
-    root->left->left = t.addNode(20);
+    Tree::Node *root = t.addNode(10);                       //                10
+    root->left = t.addNode(2);                              //            2       10
+    root->right = t.addNode(10);                            //         20   1         -25
+    root->left->left = t.addNode(20);                       //                       3    4
     root->left->right = t.addNode(1);
     root->right->right = t.addNode(-25);
     root->right->right->left = t.addNode(3);
@@ -218,6 +218,26 @@ int main() {
     printf("The min deepth is %d.\n", t.minDepth(root));
     // find the max path sum
     printf("The max path sum is: %d.\n", t.maxPathSum(root));
+
+    // build a BST tree
+    Tree::Node *root1 = t.addNode(8);                        //                 8
+    root1->left = t.addNode(3);                              //            3       10
+    root1->right = t.addNode(10);                            //         1    6         14
+    root1->left->left = t.addNode(1);                        //             4  7     13
+    root1->left->right = t.addNode(6);
+    root1->left->right->left = t.addNode(4);
+    root1->left->right->right = t.addNode(7);
+    root1->right->right = t.addNode(14);
+    root1->right->right->left = t.addNode(13);
+    t.display(root1);                   // display a tree
+
+    Tree::Node *tn;
+    tn = t.searchBST(root1, 7);
+    printf("Found node %d from BST tree.\n", tn->data);
+    tn = t.insertBST(root1, 9);
+    printf("After insert 9:\n");
+    t.display(root1);                   // display a tree
+
 
     return 0; // 0 successful, 1 failed
 }

@@ -19,16 +19,17 @@ namespace TREE{
             struct Node *left, *right;
         };
 
-        // create a node
-        Node *addNode(int data) {
-
+        /* create a node
+        Tree::Node addNode(int data) {
             Node *temp = new Node;
             temp->data = data;
             temp->left = NULL;
             temp->right = NULL;
-
-            return temp;
+            return *temp;
         }
+        */
+
+        Tree::Node* addNode(int data);
 
         // display a tree
         void display(Node *root);
@@ -38,6 +39,11 @@ namespace TREE{
         int minDepth(Node *root);
         int pathSum(Node *root, int sum);
         int maxPathSum(Node *root);
+
+        // binary search tree (BST)
+        Tree::Node* searchBST(Node *root, int data);
+        Tree::Node* insertBST(Node *root, int data);
+        Tree::Node* deleteBST(Node *root, int data);
 
 
     };
