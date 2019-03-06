@@ -1,0 +1,51 @@
+# depslib dependency file v1.0
+1551833978 source:/home/plian/workplace/cpp/cpp_learn/graph.cpp
+	"graph.h"
+
+1551833978 /home/plian/workplace/cpp/cpp_learn/graph.h
+	<iostream>
+	<list>
+
+1551834681 source:/home/plian/workplace/cpp/cpp_learn/linkedlist.cpp
+	"linkedlist.h"
+
+1551748645 /home/plian/workplace/cpp/cpp_learn/linkedlist.h
+	<iostream>
+
+1551840876 source:/home/plian/workplace/cpp/cpp_learn/main.cpp
+	"tutorial.h"
+	"sort.h"
+	"linkedlist.h"
+	"graph.h"
+	"tree.h"
+
+1551748645 /home/plian/workplace/cpp/cpp_learn/tutorial.h
+	<iostream>
+	<cmath>
+	<vector>
+	<deque>
+	<list>
+	<map>
+	<set>
+	<stack>
+	<queue>
+	<algorithm>
+
+1551748645 /home/plian/workplace/cpp/cpp_learn/sort.h
+	<iostream>
+
+1551756772 source:/home/plian/workplace/cpp/cpp_learn/sort.cpp
+	"sort.h"
+
+1551756772 source:/home/plian/workplace/cpp/cpp_learn/tutorial.cpp
+	"tutorial.h"
+
+1551840876 /home/plian/workplace/cpp/cpp_learn/tree.h
+	<stdio.h>
+	<list>
+	<stack>
+	<climits>
+
+1551840294 source:/home/plian/workplace/cpp/cpp_learn/tree.cpp
+	"tree.h"
+
