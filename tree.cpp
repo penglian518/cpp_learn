@@ -205,3 +205,63 @@ void Tree::display(TREE::Tree::Node *root) {
 }
 
 
+
+Tree::Node* Tree::addNode(int data) {
+    Node *temp = new Node;
+    temp->data = data;
+    temp->left = temp->right = NULL;
+    return temp;
+}
+
+
+/* Binary search tree (BST) */
+Tree::Node* Tree::searchBST(TREE::Tree::Node *root, int data) {
+    if (root == NULL || root->data == data)
+        return root;
+
+    if (data < root->data)
+        return searchBST(root->left, data);
+
+    return searchBST(root->right, data);
+
+}
+
+Tree::Node* Tree::insertBST(TREE::Tree::Node *root, int data) {
+    if (root == NULL)
+        root = Tree::addNode(data);
+
+    if (data < root->data)
+        root->left = insertBST(root->left, data);
+    else if (data > root->data)
+        root->right = insertBST(root->right, data);
+
+    return root;
+
+}
+
+Tree::Node* Tree::deleteBST(TREE::Tree::Node *root, int data) {
+    Tree::Node *r = new Tree::Node;
+    Tree::Node *l = new Tree::Node;
+
+    if (root == NULL)
+        return root;
+
+    if (data < root->data)                                  // find from left
+        root->left = deleteBST(root->left, data);
+    else if (data > root->data)                             // find from right
+        root->right = deleteBST(root->right, data);
+    else                                                   // found the node!
+
+        if (root->left == NULL and root->right != NULL)
+            r->right = root->right;
+            // do something to r
+        else if (root->left != NULL and root->right == NULL)
+            l->left = root->left;
+        else if (root->left == NULL and root->right == NULL)
+            delete(root);
+        else
+            r->right = root->right;
+            l->left = root->left;
+
+
+}

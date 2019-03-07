@@ -22,16 +22,17 @@ namespace TREE{
             struct Node *left, *right;
         };
 
-        // create a node
-        Node *addNode(int data) {
-
+        /* create a node
+        Tree::Node addNode(int data) {
             Node *temp = new Node;
             temp->data = data;
             temp->left = NULL;
             temp->right = NULL;
-
-            return temp;
+            return *temp;
         }
+        */
+
+        Tree::Node* addNode(int data);
 
         void display(Node *root);               // display a tree
         void deepFistUtil(Node *root);
@@ -42,6 +43,12 @@ namespace TREE{
         int maxPathSum(Node *root);             // find maxmium path sum
         bool isFullBST(Node *root);
         bool canRepresentBST(int arr[], int n); // arr can represent BST or not
+
+        // binary search tree (BST)
+        Tree::Node* searchBST(Node *root, int data);
+        Tree::Node* insertBST(Node *root, int data);
+        Tree::Node* deleteBST(Node *root, int data);
+
 
     };
 
