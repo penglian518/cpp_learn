@@ -48,7 +48,7 @@ int factorial(int n){
 // the main function. 'int' means it will return an integer. That's why should return 0 at the end.
 int main() {
     std::cout << "Hello, World!" << std::endl;
-    
+
     // Global variables
     cout << "Display me!"; // cout - an object belongs to iostream, which displays the content between double quotes.
     cout << "Global variables: " << gVar << endl;
@@ -217,7 +217,20 @@ int main() {
     // find min deepth
     printf("The min deepth is %d.\n", t.minDepth(root));
     // find the max path sum
-    printf("The max path sum is: %d.\n", t.maxPathSum(root));
+    printf("The max path sum is: %d. SHOULD be 42!!!\n", t.maxPathSum(root));
+    // tree is full BST or not
+    t.isFullBST(root) ? printf("IS full BST.\n"):printf("Is NOT full BST.\n");
+
+    // arrary can be represented as BST
+    //int arr5[] = {40, 30, 35, 80, 100};
+    int arr5[] = {40, 30, 35, 20, 80, 100};
+    printf("The init arr is: \n");
+    for (auto i : arr5) {
+        printf("%d ", i);
+    }
+    printf("\n");
+    t.canRepresentBST(arr5, sizeof(arr5)/sizeof(arr5[0])) ? printf("True!\n"):printf("False!\n");
+
 
     return 0; // 0 successful, 1 failed
 }

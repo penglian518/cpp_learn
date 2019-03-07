@@ -7,19 +7,29 @@
 			<Cursor1 position="4756" topLine="198" />
 		</Cursor>
 	</File>
+	<File name="linkedlist.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="312" topLine="4" />
+		</Cursor>
+	</File>
 	<File name="tutorial.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="249" topLine="114" />
 		</Cursor>
 	</File>
-	<File name="main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="tree.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="6179" topLine="200" />
+			<Cursor1 position="1041" topLine="20" />
 		</Cursor>
 	</File>
-	<File name="linkedlist.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="312" topLine="4" />
+			<Cursor1 position="5865" topLine="200" />
+		</Cursor>
+	</File>
+	<File name="tree.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3763" topLine="123" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

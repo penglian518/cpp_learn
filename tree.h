@@ -6,6 +6,9 @@
 #define CPP_LEARN_TREE_H
 
 #include <stdio.h>
+#include <list>
+#include <stack>
+#include <climits>
 
 namespace TREE{
     class Tree {
@@ -30,15 +33,15 @@ namespace TREE{
             return temp;
         }
 
-        // display a tree
-        void display(Node *root);
+        void display(Node *root);               // display a tree
         void deepFistUtil(Node *root);
         void breadthFistUtil(Node *root);
-        void allDepth(Node *root, int d=1);
-        int minDepth(Node *root);
+        void allDepth(Node *root, int d=1);     // find all depth
+        int minDepth(Node *root);               // find minimium depth
         int pathSum(Node *root, int sum);
-        int maxPathSum(Node *root);
-
+        int maxPathSum(Node *root);             // find maxmium path sum
+        bool isFullBST(Node *root);
+        bool canRepresentBST(int arr[], int n); // arr can represent BST or not
 
     };
 

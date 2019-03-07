@@ -58,8 +58,8 @@ void linkedlist::insert_position(int pos, int value){
             temp = temp->next;
             i += 1;
         }
+        temp_current->next = temp->next;
         temp->next = temp_current;
-        temp_current->next = temp+1;
     } else {
         createNode(value);
     }

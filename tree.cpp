@@ -3,7 +3,6 @@
 //
 
 #include "tree.h"
-#include <list>
 
 using namespace std;
 using namespace TREE;
@@ -107,12 +106,55 @@ int Tree::pathSum(TREE::Tree::Node *root, int sum) {
 
 }
 
-
 int Tree::maxPathSum(TREE::Tree::Node *root) {
     int sum = 0;
 
     return pathSum(root, sum);
 }
+
+bool Tree::isFullBST(TREE::Tree::Node *root){
+    if (root == NULL || root->left == root->right == NULL) {
+        return true;
+    }
+
+    if (root->left && root->right){
+        return (isFullBST(root->left) && isFullBST(root->right));
+    }
+
+    return false;
+}
+
+
+
+bool Tree::canRepresentBST(int arr[], int n){
+    stack<int> s;                       // create a stack
+    int root = INT_MIN;                 // init root as minimium int
+
+    // scan all element in arr[]
+    for (int i=0; i<n; i++){
+        // ith ele (right leaf) should be larger than root.
+        if (arr[i] < root){
+            return false;
+        }
+
+        // if ith element is larger than the last ele in stack,
+        // mark the last ele in stack as a root and delete it.
+        while (!s.empty() && s.top() < arr[i]){
+            root = s.top();
+            s.pop();
+        }
+
+        // After the while loop, either stack is empty or ith element is less then last element in stack
+        // put ith element on top of the stack
+        s.push(arr[i]);
+    }
+
+    return true;
+
+}
+
+
+
 
 
 
