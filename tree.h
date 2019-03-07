@@ -48,7 +48,7 @@ namespace TREE{
         Tree::Node* searchBST(Node *root, int data);
         Tree::Node* insertBST(Node *root, int data);
         Tree::Node* deleteBST(Node *root, int data);
-
+        Tree::Node* findMax(Node *root);
 
     };
 

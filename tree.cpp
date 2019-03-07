@@ -113,7 +113,7 @@ int Tree::maxPathSum(TREE::Tree::Node *root) {
 }
 
 bool Tree::isFullBST(TREE::Tree::Node *root){
-    if (root == NULL || root->left == root->right == NULL) {
+    if (root == NULL || (root->left == NULL && root->right == NULL)) {
         return true;
     }
 
@@ -239,29 +239,41 @@ Tree::Node* Tree::insertBST(TREE::Tree::Node *root, int data) {
 
 }
 
-Tree::Node* Tree::deleteBST(TREE::Tree::Node *root, int data) {
-    Tree::Node *r = new Tree::Node;
-    Tree::Node *l = new Tree::Node;
-
+Tree::Node* Tree::findMax(Tree::Node *root){
     if (root == NULL)
+        return root;
+
+    while (root->right != NULL){
+        root = root->right;
+    }
+    return root;
+}
+
+Tree::Node* Tree::deleteBST(TREE::Tree::Node *root, int data) {
+    printf("%d\n", root->data);
+    if (root == NULL)                                       // if no root return null
         return root;
 
     if (data < root->data)                                  // find from left
         root->left = deleteBST(root->left, data);
     else if (data > root->data)                             // find from right
         root->right = deleteBST(root->right, data);
-    else                                                   // found the node!
-
-        if (root->left == NULL and root->right != NULL)
-            r->right = root->right;
-            // do something to r
-        else if (root->left != NULL and root->right == NULL)
-            l->left = root->left;
-        else if (root->left == NULL and root->right == NULL)
-            delete(root);
-        else
-            r->right = root->right;
-            l->left = root->left;
-
-
+    else                                                   // found the node!!!
+        if (root->left == NULL){            // one right child or no child, return root->right
+            Tree::Node *temp = root->right;
+            delete root;
+            return temp;
+        }
+        else if (root->right == NULL){      // one left child or no child, return root->left
+            Tree::Node *temp = root->left;
+            delete root;
+            return temp;
+        }
+        else {                                                  // two children
+            Tree::Node *temp = findMax(root->left);             // find max from root->left
+            root->data = temp->data;                            // update root->date with max->data
+            root->left = deleteBST(root->left, temp->data);     // update root->left with 2nd largest node from
+            return root;                                        //      root->left ( by deleting the max)
+        }
+    return root;
 }

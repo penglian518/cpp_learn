@@ -250,6 +250,9 @@ int main() {
     tn = t.insertBST(root1, 9);
     printf("After insert 9:\n");
     t.display(root1);                   // display a tree
+    tn = t.deleteBST(root1,9);
+    printf("After delete 9:\n");
+    t.display(root1);                   // display a tree
 
 
     return 0; // 0 successful, 1 failed
